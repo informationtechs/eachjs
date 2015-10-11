@@ -1,0 +1,84 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/example.css" />
+</head>
+<body data-ej-base="http://eachjsapi.azurewebsites.net">
+<h2>Example 9: Navigation Wizard</h2>
+<ul class="ul-wizard">
+	<li id="tab1" class="li-wizard cyan">Step 1</li>
+	<li id="tab2" class="li-wizard lightgray">Step 2</li>
+	<li id="tab3" class="li-wizard lightgray">Step 3</li>
+</ul>
+<div id="section1">
+	<div id="content1">Content 1...</div>
+	<button id="button1" data-ej-click-output="#section1(hide);#section2(show);#tab1(addclass<lightgray>,removeclass<cyan>);#tab2(addclass<cyan>,removeclass<lightgray>);">Next</button>
+</div>
+<div id="section2" class="hide">
+	<div id="content2">Content 2...</div>
+	<button id="button2" data-ej-click-output="#section2(hide);#section3(show);#tab2(addclass<lightgray>,removeclass<cyan>);#tab3(addclass<cyan>,removeclass<lightgray>);">Next</button>
+</div>
+<div id="section3" class="hide">
+	<div id="content3">Content 3...</div>
+	<button id="button3" data-ej-click-output="(url)reload">Start Over</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/each-0.11.js" type="text/javascript"></script>
+<!-- Below are unit tests -->
+<hr />
+<div id="message"></div>
+<div id="message-template" class="hide">
+	<div class="passed-message"><span class="title"></span> Passed</div>
+	<div class="failed-message"><span class="title"></span> Failed</div>
+</div>
+<script type="text/javascript">
+var fnRunTest1 = function() {
+	var title = "Loading Steps";
+	if ($("#section1").is(":visible") && !($("#section2").is(":visible"))) {
+		fnSetPassedMessage(title);
+		fnRunTest2();
+	} else {
+		fnSetFailedMessage(title);
+	}
+};
+var fnRunTest2 = function() {
+	var title = "Go to Step 2";
+	$("#button1").click();
+	setTimeout(function() {
+		// Check display
+		if ($("#section2").is(":visible") && !($("#section1").is(":visible"))) {
+			fnSetPassedMessage(title);
+			fnRunTest3();
+		} else {
+			fnSetFailedMessage(title);
+		}		
+	}, 1000);
+};
+var fnRunTest3 = function() {
+	var title = "Go to Step 3";
+	$("#button2").click();
+	setTimeout(function() {
+		// Check display
+		if ($("#section3").is(":visible") && !($("#section2").is(":visible"))) {
+			fnSetPassedMessage(title);
+		} else {
+			fnSetFailedMessage(title);
+		}		
+	}, 1000);
+};
+var fnSetPassedMessage = function(title) {
+	var msg = $("#message-template").find(".passed-message").clone();
+	msg.find(".title").html(title);
+	$("#message").append(msg);	
+};
+var fnSetFailedMessage = function(title) {
+	var msg = $("#message-template").find(".failed-message").clone();
+	msg.find(".title").html(title);
+	$("#message").append(msg);	
+};
+setTimeout(function() { 
+	fnRunTest1(); 
+	//fnRunTest2(); 
+}, 3000);
+</script>
+</body>
+</html>

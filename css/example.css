@@ -1,0 +1,14 @@
+.container { padding:15px;}
+.fixedHeader { position:fixed;top:0px;left:0px;right:0px;z-index:1000;background-color:#ccc;min-height:50px; } 
+.padding10 { padding:10px; }
+.status { color:red; }
+.passed-message { color:#5cb85c; }
+.failed-message { color:#f00; }
+.hide {	display:none; }
+.green-italic { background-color:#00ff00; font-style:italic; }
+.red-bold { background-color:#ff0000; font-weight:bold; }
+.width200 { width:200px; }
+.ul-wizard { list-style-type:none !important; display:table !important; padding:0px; }
+.li-wizard { display:table-cell !important; padding:5px 20px; }
+.cyan { background-color:cyan; }
+.lightgray { background-color:lightgray; }

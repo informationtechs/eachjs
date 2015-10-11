@@ -1,0 +1,1 @@
+- if "data-target-failure" is missing in step6.html, the button could be changed to "invalid password" when it failed to log in.
