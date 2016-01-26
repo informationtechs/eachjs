@@ -6,7 +6,6 @@ A Quick Example
 ```
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/example.css" />
 </head>
 <body>
 <h4 id="unit1-title">1.1a Populate DIV HTML</h4>
