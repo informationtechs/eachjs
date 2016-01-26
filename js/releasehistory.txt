@@ -1,0 +1,20 @@
+// 03/18/2015 v0.1
+// 04/05/2015 v0.2
+// 04/11/2015 v0.3
+// 04/26/2015 v0.4
+// 05/30/2015 v0.5
+// 08/07/2015 v0.6: Combined eachjs functions together and re-group them.
+// v0.7: Re-define output data to support any entity value/html/attribute, URL parameters, storage, and cookie
+// Renamed data-parameter to data-input and data-target to data-output and their related attribute names
+// V0.8: Re-structure the eachjs as mediator; Add custom function support
+// v0.9: Simplified logic by removing mediator and combining "base" and "element" classes.
+// Added -ej to attributes, non-click events
+// v0.10: added input array support
+// v0.11: Standardize formats
+// Data: {{}}, Action: (), Parameter/Attribute: <>, Model: <>
+// The core has 2 functions: the executeAjax to communicate with web API and
+//	the Register to link HTML elements with the communication built by executeAjax
+// The core is the ProcessData function which calls many sub-functions to populate or process data
+// The handleErrors function is to handle errors and failures
+// v0.12: added support to local data source
+// v1.0: clean up

@@ -3,34 +3,33 @@
 <link rel="stylesheet" type="text/css" href="css/example.css" />
 </head>
 <body>
-<h2>Example 3: Populate Collection of Simple Objects</h2>
+<h1>Example 3: Populate Collection of Simple Objects</h1>
 <h4 id="unit1-title">3.1 Populate SPAN under DIV</h4>
-<div id="unit1" data-ej-load="http://eachjsapi.azurewebsites.net/data/plane">
+<div id="unit1" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane">
 	<span data-ej-repeat>{{[].Name}}</span>
 </div>
 <h4 id="unit2-title">3.2 Populate LI under UL (default property: value/Value)</h4>
-<ul id="unit2" data-ej-load="http://eachjsapi.azurewebsites.net/data/plane">
+<ul id="unit2" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane">
 	<li data-ej-repeat></li>
 </ul>
 <h4 id="unit3-title">3.3 Populate LI under UL (with header/footer)</h4>
-<ul id="unit3" data-ej-load="http://eachjsapi.azurewebsites.net/data/plane">
+<ul id="unit3" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane">
 	<li>Note: this is the header.</li>
 	<li data-ej-repeat>Start with {{[].Name}}, then {{[].Text}}</li>
 	<li>Note: this is the footer.</li>
 </ul>
 <h4 id="unit4-title">3.4 Populate DIV (auto-add children)</h4>
-<div id="unit4" data-ej-load="http://eachjsapi.azurewebsites.net/data/plane"></div>
+<div id="unit4" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane"></div>
 <h4 id="unit5-title">3.5 Populate UL (auto-add default children tag LI)</h4>
-<ul id="unit5" data-ej-load="http://eachjsapi.azurewebsites.net/data/plane"></ul>
+<ul id="unit5" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane"></ul>
 <h4 id="unit6-title">3.6 Populate TABLE with addclass</h4>
-<table id="unit6" data-ej-load="http://eachjsapi.azurewebsites.net/data/plane" data-ej-load-output=";.item-row:odd(addclass<green-italic>);.item-row:even(addclass<red-bold>)">
+<table id="unit6" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane" data-ej-load-output=";.item-row:odd(addclass<green-italic>);.item-row:even(addclass<red-bold>)">
 	<tr class="item-row" data-ej-repeat>
 		<td>{{[].Name}}</td>
 		<td>{{[].Text}}</td>
 	</tr>
 </table>
-
-<!--<table id="unit6" data-ej-load="http://eachjsapi.azurewebsites.net/data/plane"
+<table id="unit6" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane"
 	data-ej-load-output="[]@.item-row;
 					[].name@.item-name;[].text@.item-text;
 				    .item-row:odd(addclass<green-italic>);.item-row:even(addclass<red-bold>)">
@@ -38,17 +37,17 @@
 		<td class="item-name"></td>
 		<td class="item-text"></td>
 	</tr>
-</table>-->
-
+</table>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="js/each-0.11.js?2" type="text/javascript"></script>
+<script src="js/each-1.0.js?2" type="text/javascript"></script>
 <!-- Below are unit tests -->
 <hr />
 <div id="message"></div>
 <div id="message-template" class="hide">
 	<div class="passed-message"><span class="title"></span> Passed</div>
 	<div class="failed-message"><span class="title"></span> Failed</div>
-</div><script type="text/javascript">
+</div>
+<script type="text/javascript">
 var fnRunTest1 = function() {
 	var expected = "Sample: Name";
 	var numberOfExpected = 5;

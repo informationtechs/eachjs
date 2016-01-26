@@ -3,9 +3,9 @@
 <link rel="stylesheet" type="text/css" href="css/example.css" />
 </head>
 <body>
-<h2>Example 4: Populate Complex Object</h2>
+<h1>Example 4: Populate Complex Object</h1>
 <h4 id="unit1-title">4.1 Complex Object</h4>
-<div id="unit1" data-ej-load="http://eachjsapi.azurewebsites.net/data/book">
+<div id="unit1" data-ej-load="http://eachdataapi.azurewebsites.net/data/book">
 	<div>{{title}} <i>by</i> {{author}}</div>
 	<div data-ej-repeat="chapters">
 		<p>{{chapters[].index}}.{{chapters[].title}}</p>
@@ -14,8 +14,8 @@
 		</div>
 	</div>
 </div>
-<h4 id="unit2-title">4.2 Complex Object Collections</h2>
-<div id="unit2" data-ej-load="http://eachjsapi.azurewebsites.net/data/banks">
+<h4 id="unit2-title">4.2 Complex Object Collections</h1>
+<div id="unit2" data-ej-load="http://eachdataapi.azurewebsites.net/data/banks">
 	<div data-ej-repeat>
 		<h5>Bank Name: {{[].name}}</h5>
 		<div data-ej-repeat="branches">
@@ -27,14 +27,15 @@
 		</div>
 	</div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/each-1.0.js" type="text/javascript"></script>
+<!-- Below are unit tests -->
 <hr />
 <div id="message"></div>
 <div id="message-template" class="hide">
 	<div class="passed-message"><span class="title"></span> Passed</div>
 	<div class="failed-message"><span class="title"></span> Failed</div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="js/each-0.11.js" type="text/javascript"></script>
 <script type="text/javascript">
 var fnRunTest1 = function() {
 	var expected = "2.C.Duck Magic";

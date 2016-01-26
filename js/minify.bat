@@ -1,2 +1,2 @@
-jsmin < each-0.11.js > each-0.10.min.js
+jsmin < each-0.12.js > each-0.12.min.js
 pause
