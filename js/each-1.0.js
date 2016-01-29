@@ -3,6 +3,7 @@
  * Inspired by the Twitter Bootstrap & the AugularJS
  * ========================================================================
  * Copyright (c) 2016 Joe Gao
+ * Email: informationtechs@gmail.com
  * Licensed under MIT:
  * http://www.opensource.org/licenses/mit-license.php
  * ======================================================================== */
@@ -1681,6 +1682,23 @@ eachjs.getOutputs = function(element, attribute) {
 };
 /*
  * @description
+ * Evaluates if a name belongs to a local variable
+ * @param {string} name The name.
+ */
+eachjs.isLocalVariable = function(name) {
+	return this.containsVaraibleCharsOnly(name) && 
+				(this.isJson(eval(name)) || typeof eval(name) == "string");
+};
+/*
+ * @description
+ * Evaluates if a name belongs to a local function
+ * @param {string} name The name.
+ */
+eachjs.isLocalFunc = function(name) {
+	return this.containsVaraibleCharsOnly(name) && typeof eval(name) == "function";
+};
+/*
+ * @description
  * Sets cookie
  * @param {string} cookieName The cookie's name.
  * @param {string} value The cookie's value.
@@ -2117,9 +2135,9 @@ eachjs.control.prototype.processElement = function(selector, attribute, event) {
 	var attr = $(selector).attr(attribute);
 	this.parent.registerActionStatus(eid, this.parent.actionStatusEnum.processing);	
 	if (attr !== undefined && attr !== "") {		
-		if (this.parent.containsVaraibleCharsOnly(attr) && typeof eval(attr) == "object") {		
+		if (this.parent.isLocalVariable(attr)) {		
 			$control.executeLocal(eid, eval(attr), $control, event);
-		} else if (this.parent.containsVaraibleCharsOnly(attr) && typeof eval(attr) == "function") {	
+		} else if (this.parent.isLocalFunc(attr)) {	
 			var para = this.parent.getFunctionPara(inputData);
 			$control.executeLocal(eid, eval(attr + "(" + para + ")"), $control, event);
 		} else {
