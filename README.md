@@ -1,4 +1,5 @@
 # EachJS
+<<<<<<< HEAD
 EachJS is an API connection framework. EachJS enhances HTML and bridges the front view with the back-end API. EachJS is perfect for API-driven websites and Single Page Applications (SPAs). It is free of charge to any person or business, licensed under MIT.
 
 Getting Started
@@ -28,6 +29,11 @@ Example 1-1a:
 ```
 
 Examples
+=======
+EachJS is an API connection framework. It enhances HTML and bridges the front HTML view with the back-end API. EachJS extends HTML with new attributes, perfect for API-driven websites and Single Page Applications (SPAs). It is easy to learn. 
+
+A Quick Example
+>>>>>>> origin/master
 
 Example 1-1a:
 ```
@@ -332,6 +338,7 @@ Example 10:
 </div>
 ```
 
+<<<<<<< HEAD
 Syntax
 
 Customize
@@ -344,6 +351,8 @@ We'll evaluate your contributions every 3 months. Key contributors will be credi
 
 
 
+=======
+>>>>>>> origin/master
 
 
 
