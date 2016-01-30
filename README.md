@@ -1,20 +1,32 @@
 # EachJS
-<<<<<<< HEAD
-EachJS is an API connection framework. EachJS enhances HTML and bridges the front view with the back-end API. EachJS is perfect for API-driven websites and Single Page Applications (SPAs). It is free of charge to any person or business, licensed under MIT.
 
-Getting Started
+EachJS is an API connection framework. EachJS enhances HTML and bridges the front view with the back-end web API. It is free of charge to any person or business, licensed under MIT.
 
-EachJS extends HTML with new attributes 
+EachJS extends HTML with new attributes. With EachJS, your HTML can communicate with your API services with no or minimum additional JavaScript codes. EachJS is perfect for SOA-driven applications and Single Page Applications (SPAs). 
 
-Let's start with A Quick Example
+## Table of Contents
 
-By extending HTML with new attributes, 
+* [Getting Started](#getting-started)
+* [Examples](#examples)
+* [Syntax](#syntax)
+* [Customize](#customize)
+* [Contributing](#contributing)
 
+## Getting Started
+
+Let's start with a quick example.
+
+Suppose there is a data service at:
 http://eachdataapi.azurewebsites.net/data/dot
 
+It returns a simple string:
+```
 Sample: Dot
+```
 
-Example 1-1a:
+In the following example, you can quickly call the data service and put the results on your page.
+
+### Example 1-1:
 ```
 <html>
 <head>
@@ -29,13 +41,12 @@ Example 1-1a:
 ```
 
 Examples
-=======
-EachJS is an API connection framework. It enhances HTML and bridges the front HTML view with the back-end API. EachJS extends HTML with new attributes, perfect for API-driven websites and Single Page Applications (SPAs). It is easy to learn. 
 
-A Quick Example
->>>>>>> origin/master
+In this section, we'll use examples to help you quickly master EachJS.
 
-Example 1-1a:
+### Example 1-1:
+Populate DIV HTML
+(All attributes in EachJS start with a "data-ej-" prefix, and are customizable.)
 ```
 <html>
 <head>
@@ -49,7 +60,27 @@ Example 1-1a:
 </html>
 ```
 
-Example 1-1b:
+### Example 1-2:
+Populate LI HTML
+```
+<ul>
+	<li>Laura</li>
+	<li id="unit2" data-ej-load="http://eachdataapi.azurewebsites.net/data/dot"></li>
+</ul>
+```
+
+### Example 1-3:
+Populate INPUT TEXT
+```
+<h4 id="unit3-title">1.3 Populate INPUT TEXT</h4>
+<input id="unit3" type="text" data-ej-load="http://eachdataapi.azurewebsites.net/data/dot" />
+```
+
+What if your API service is not yet ready when you work on your user interface? In the next example, we'll show you how to define your sample data in JavaScript. This allows you to see your end results before your back-end developers complete their part of work. After the web APIs are ready, you can then easily replace your endpoints in your HTML codes.
+
+### Example 1-4:
+Populate DIV HTML from a Local Variable
+(Supports strings, JSON objects, and functions)
 ```
 <html>
 <head>
@@ -66,45 +97,55 @@ Example 1-1b:
 </html>
 ```
 
-Example 1-2:
+Suppose there is a data service at:
+http://eachdataapi.azurewebsites.net/data/line
+
+It returns a simple JSON object:
 ```
-<ul>
-	<li>Laura</li>
-	<li id="unit2" data-ej-load="http://eachdataapi.azurewebsites.net/data/dot"></li>
-</ul>
+{"id":"101","Name":"Sample: Name","Text":"Sample: Text","Value":"Sample: Value"}
 ```
 
-Example 1-3:
-```
-<h4 id="unit3-title">1.3 Populate INPUT TEXT</h4>
-<input id="unit3" type="text" data-ej-load="http://eachdataapi.azurewebsites.net/data/dot" />
-```
-
-Example 2-1:
+### Example 2-1:
+Populate content
+(By default, the double curly brackets are used to define the models.)
 ```
 <div id="unit1" data-ej-load="http://eachdataapi.azurewebsites.net/data/line">{{Name}}</div>
 ```
 
-Example 2-2:
+### Example 2-2:
+Populate content with format
 ```
 <div id="unit2" data-ej-load="http://eachdataapi.azurewebsites.net/data/line">{{Name}}, then {{Text}}</div>
 ```
 
-Example 3-1:
+Suppose there is a data service at:
+http://eachdataapi.azurewebsites.net/data/plane
+
+It returns a JSON array:
+[{"id":"101","Name":"Sample: Name","Text":"Sample: Text","Value":"Sample: Value"},
+{"id":"102","Name":"Sample: Name 2","Text":"Sample: Text 2","Value":"Sample: Value 2"},
+{"id":"103","Name":"Sample: Name 3","Text":"Sample: Text 3","Value":"Sample: Value 3"},
+{"id":"104","Name":"Sample: Name 4","Text":"Sample: Text 4","Value":"Sample: Value 4"},
+{"id":"105","Name":"Sample: Name 5","Text":"Sample: Text 5","Value":"Sample: Value 5"}]
+
+### Example 3-1:
+Populate SPAN under DIV from a Collection
 ```
 <div id="unit1" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane">
 	<span data-ej-repeat>{{[].Name}}</span>
 </div>
 ```
 
-Example 3-2:
+### Example 3-2:
+Populate LI under UL from a Collection
 ```
 <ul id="unit2" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane">
 	<li data-ej-repeat></li>
 </ul>
 ```
 
-Example 3-3:
+### Example 3-3:
+Populate LI under UL (with header/footer)
 ```
 <ul id="unit3" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane">
 	<li>Note: this is the header.</li>
@@ -113,19 +154,23 @@ Example 3-3:
 </ul>
 ```
 
-Example 3-4:
+### Example 3-4:
+Populate DIV (auto-add children)
 ```
 <div id="unit4" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane"></div>
 ```
 
-Example 3-5:
+### Example 3-5:
+Populate UL (auto-add default LI children)
 ```
 <ul id="unit5" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane"></ul>
 ```
 
-Example 3-6:
+### Example 3-6:
+Populate TABLE with addclass
+(In this example, multiple output actions are delimited using semi colons.)
 ```
-<table id="unit6" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane" data-ej-load-output=";.item-row:odd(addclass<green-italic>);.item-row:even(addclass<red-bold>)">
+<table id="unit6" data-ej-load="http://eachdataapi.azurewebsites.net/data/plane" data-ej-load-output="#unit6;.item-row:odd(addclass<green-italic>);.item-row:even(addclass<red-bold>)">
 	<tr class="item-row" data-ej-repeat>
 		<td>{{[].Name}}</td>
 		<td>{{[].Text}}</td>
@@ -133,7 +178,8 @@ Example 3-6:
 </table>
 ```
 
-Example 4-1:
+### Example 4-1:
+Populate Complex Object
 ```
 <div id="unit1" data-ej-load="http://eachdataapi.azurewebsites.net/data/book">
 	<div>{{title}} <i>by</i> {{author}}</div>
@@ -146,7 +192,8 @@ Example 4-1:
 </div>
 ```
 
-Example 4-2:
+### Example 4-2:
+Complex Object Collections
 ```
 <div id="unit2" data-ej-load="http://eachdataapi.azurewebsites.net/data/banks">
 	<div data-ej-repeat>
@@ -162,16 +209,25 @@ Example 4-2:
 </div>
 ```
 
-Example 5-1:
+### Example 5-1:
+External Functions
 ```
 <body data-ej-base="http://eachdataapi.azurewebsites.net">
 <div>What qualifies Best Samples?</div>
 <div data-ej-load="/data/line" data-ej-load-output="fnSetSpecs"></div>
 <div id="specs"></div>
+...
+<script>
+// Custom logic: use special layout when loading data
+var fnSetSpecs = function(data) {
+	$("#specs").html(data.Name);
+};
+</script>
 </body>
 ```
 
-Example 5-2:
+### Example 5-2:
+Process Output, then Call Function
 ```
 <body data-ej-base="http://eachdataapi.azurewebsites.net">
 <div>2015 Most Profitable Banks</div>
@@ -179,10 +235,22 @@ Example 5-2:
 <ul id="unit2" data-ej-load="/data/banks" data-ej-load-output=";fnAddBankPrefix">
 	<li data-ej-repeat><span>{{i}},</span> <span class="bank-name">{{[].name}}</span></li>
 </ul>
+...
+<script>
+// Custom logic: add prefix after loading data
+var fnAddBankPrefix = function(data) {
+	$(".bank-name").each(
+		function() {
+			$(this).html($(this).html() + $("#topLabel").val());
+		}
+	);
+};
+</script>
 </body>
 ```
 
-Example 6:
+### Example 6:
+Create, Read, Update, and Delete Records
 ```
 <table id="items" data-ej-load="/data/items">
 	<tr data-ej-repeat>
@@ -219,7 +287,8 @@ Example 6:
 </div>
 ```
 
-Example 7:
+### Example 7:
+Authorized Contents
 ```
 <div class="fixed-header">
     <div id="header" class="container">
@@ -263,7 +332,8 @@ Example 7:
 </div>
 ```
 
-Example 8:
+### Example 8:
+Cascading Menu
 ```
 <select id="banks" data-ej-load="/data/banks" data-ej-change="/data/banks"
 	data-ej-change-input="id;key2@#branchesKey"
@@ -286,7 +356,8 @@ Example 8:
 </select>
 ```
 
-Example 9:
+### Example 9:
+Navigation Wizard
 ```
 <ul class="ul-wizard">
 	<li id="tab1" class="li-wizard cyan">Step 1</li>
@@ -307,7 +378,8 @@ Example 9:
 </div>
 ```
 
-Example 10:
+### Example 10:
+Bulk Insert
 ```
 <table id="unit1">
 	<tr>
@@ -338,21 +410,18 @@ Example 10:
 </div>
 ```
 
-<<<<<<< HEAD
-Syntax
+## Syntax
 
-Customize
+## Customize
 
-Contribution
+## Contributing
 
-EachJS v1.0 was officially released in 1/30/2016. We welcome you to make any kind of contributions, including enhancing/debugging source codes, creating examples, writing unit testings, making videos, correcting mistakes, and providing suggestions.
-We'll evaluate your contributions every 3 months. Key contributors will be credited on this page. 
-
+EachJS v1.0 was officially released on 1/30/2016. You are welcomed and encouraged to make contributions, including enhancing/debugging source codes, creating examples, writing unit testings, making videos, correcting mistakes, and providing suggestions.
+We'll evaluate your contribution every 3 months. Key contributors will be credited on this page. 
 
 
 
-=======
->>>>>>> origin/master
+
 
 
 
