@@ -535,7 +535,7 @@ The "data-ej-repeat" attribute is used to loop collections:
 <div data-ej-repeat="chapters">...</div>
 ```
 
-# Data error attributes
+### Data error attributes
 
 The error attributes are:
 
