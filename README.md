@@ -1,6 +1,6 @@
 # EachJS
 
-EachJS is an API connection framework. EachJS enhances HTML and bridges the front view with the back-end web API. It is free of charge to any person or business, licensed under MIT.
+EachJS is an open source API connection framework. EachJS enhances HTML and bridges the front view with the back-end web API. It is free of charge to any person or business, licensed under MIT.
 
 EachJS extends HTML with new attributes. With EachJS, your HTML can communicate with your API services with no or minimum additional JavaScript codes. EachJS is perfect for SOA-driven applications and Single Page Applications (SPAs). 
 
@@ -40,24 +40,15 @@ In the following example, you can quickly call the data service and put the resu
 </html>
 ```
 
-Examples
+## Examples
 
-In this section, we'll use examples to help you quickly master EachJS.
+In this section, we'll use examples to help you quickly master EachJS. All examples can be downloaded at: https://github.com/informationtechs/eachjs
 
 ### Example 1-1:
 Populate DIV HTML
 (All attributes in EachJS start with a "data-ej-" prefix, and are customizable.)
 ```
-<html>
-<head>
-</head>
-<body>
-<h4 id="unit1-title">1.1a Populate DIV HTML</h4>
 <div id="unit1" data-ej-load="http://eachdataapi.azurewebsites.net/data/dot"></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="js/each-1.0.js" type="text/javascript"></script>
-</body>
-</html>
 ```
 
 ### Example 1-2:
@@ -82,19 +73,10 @@ What if your API service is not yet ready when you work on your user interface? 
 Populate DIV HTML from a Local Variable
 (Supports strings, JSON objects, and functions)
 ```
-<html>
-<head>
-</head>
-<body>
-<h4 id="unit1-title">1.1a Populate DIV HTML</h4>
 <div id="unit1" data-ej-load="$ejdot"></div>
 <script type="text/javascript">
   $ejdot = "Sample: Dot";
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="js/each-1.0.js" type="text/javascript"></script>
-</body>
-</html>
 ```
 
 Suppose there is a data service at:
@@ -412,11 +394,200 @@ Bulk Insert
 
 ## Syntax
 
+The EachJS syntax is easy and intuitive to lean.
+
+### Data attributes
+
+The data attributes are the core attributes. They are executed when an event occurs, such as "load", "click", "key down", etc. We currently have the following data attributes:
+
+```
+data-ej-load
+data-ej-change
+data-ej-click
+data-ej-rightclick
+data-ej-doubleclick
+data-ej-keyup
+data-ej-keydown
+data-ej-mouseup
+data-ej-mousedown
+```
+
+Typical values are like:
+
+```
+"http://eachdataapi.azurewebsites.net/data/dot"
+"/data/items"
+"post:/data/items"
+```
+
+When the verb is missing, it defaults to "get". When it uses a relative path, it needs to pre-pended from "data-ej-base" in the <body> tag, such as:
+
+```
+<body data-ej-base="http://eachdataapi.azurewebsites.net">
+```
+
+It also supports variables and functions, such as:
+
+```
+"$todolistremaining"
+```
+
+### Data input/auth attributes
+
+The input and auth (authorization) attributes are:
+
+```
+data-ej-load-input
+data-ej-change-input
+data-ej-click-input
+data-ej-rightclick-input
+data-ej-doubleclick-input
+data-ej-keyup-input
+data-ej-keydown-input
+data-ej-mouseup-input
+data-ej-mousedown-input
+```
+
+Typical values are like:
+
+```
+"name@#addName"
+"id@#banks;key2@#branchesKey;id2;key3@#departmentsKey"
+"item[].name@.item-name;item[].text@.item-quantity"
+```
+
+The auth (authorization) attributes are:
+
+```
+data-ej-load-auth
+data-ej-change-auth
+data-ej-click-auth
+data-ej-rightclick-auth
+data-ej-doubleclick-auth
+data-ej-keyup-auth
+data-ej-keydown-auth
+data-ej-mouseup-auth
+data-ej-mousedown-auth
+```
+
+Typical values are like:
+
+```
+"(storage)accountToken"
+```
+
+### Data output attributes
+
+The output attributes are:
+
+```
+data-ej-load-output
+data-ej-change-output
+data-ej-click-output
+data-ej-rightclick-output
+data-ej-doubleclick-output
+data-ej-keyup-output
+data-ej-keydown-output
+data-ej-mouseup-output
+data-ej-mousedown-output
+```
+
+Typical values are like:
+
+```
+"#updateItem(populate,show)"
+"#addName(clear);#addItemStatus(flash<2000>)"
+";.item-row:odd(addclass<green-italic>)"
+"fnSetSpecs"
+"(storage)-accountToken;#memberAuthorized(reload);#orders(reload)"
+"[$keepLoggedIn](localstorage)accountToken"
+"[length>1]#departments(,enable)"
+"(url)reload"
+```
+
+### Data model attributes and double curly brackets
+
+Both of the "data-ej-model" attribute and double curly brackets can be used to bind data to elements. 
+
+The "data-ej-model" attribute puts the model in tags, while the double curly brackets put the model in inline HTML codes.
+
+```
+<span id="greetingName" data-ej-model="Name"></span>
+```
+
+```
+<div id="unit2" data-ej-load="http://eachdataapi.azurewebsites.net/data/line">{{Name}}, then {{Text}}</div>
+```
+
+```
+<p>{{chapters[].index}}.{{chapters[].title}}</p>
+```
+
+### Data repeat attribute
+
+The "data-ej-repeat" attribute is used to loop collections:
+
+```
+<span data-ej-repeat>{{[].Name}}</span>
+```
+
+```
+<div data-ej-repeat="chapters">...</div>
+```
+
+# Data error attributes
+
+The error attributes are:
+
+```
+data-ej-load-error
+data-ej-change-error
+data-ej-click-error
+data-ej-rightclick-error
+data-ej-doubleclick-error
+data-ej-keyup-error
+data-ej-keydown-error
+data-ej-mouseup-error
+data-ej-mousedown-error
+```
+
+These attributes behave similar with teh -output attributes, but get executed when an error occurs. 
+
+Typical values are like:
+
+```
+"#orders(hide);#ordersNotAuthorized(show)"
+```
+
 ## Customize
+
+You can override any EachJS function by inserting an "eachjsCustom" function in front of the EachJS script, such as:
+
+```
+<script type="text/javascript">
+	function eachjsCustom() {
+		eachjs.addCountToElement = function(element, data) {
+			// Put your logic here.
+		};
+	}
+</script>
+<script src="js/each-1.0.js" type="text/javascript"></script>
+```
+
+This also allows you to define your own attribute names, such as:
+
+```
+<script type="text/javascript">
+	function eachjsCustom() {
+		eachjs.attributes.dataLoad = "ej-load";
+	}
+</script>
+<script src="js/each-1.0.js" type="text/javascript"></script>
+```
 
 ## Contributing
 
-EachJS v1.0 was officially released on 1/30/2016. You are welcomed and encouraged to make contributions, including enhancing/debugging source codes, creating examples, writing unit testings, making videos, correcting mistakes, and providing suggestions.
+EachJS v1.0 was officially released on 1/29/2016. You are welcomed and encouraged to make contributions, including enhancing/debugging source codes, creating examples, writing unit testings, making videos, correcting mistakes, and providing suggestions.
 We'll evaluate your contribution every 3 months. Key contributors will be credited on this page. 
 
 
