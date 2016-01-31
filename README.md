@@ -594,7 +594,7 @@ This also allows you to define your own attribute names, such as:
 EachJS v1.0 was officially released on 1/29/2016. You are welcomed and encouraged to make contributions, including enhancing/debugging source codes, creating examples, writing unit testings, making videos, correcting mistakes, and providing suggestions.
 We'll evaluate your contribution every 3 months. Key contributors will be credited on this page. 
 
-Any quesitons or suggestions, please send to informationtechs@gmail.com.
+Any quesitons or suggestions, please post to https://github.com/informationtechs/eachjs/issues. I will respond to them as often as I can.
 
 
 
