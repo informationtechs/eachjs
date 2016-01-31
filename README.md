@@ -1,6 +1,6 @@
 # EachJS
 
-EachJS is an open source API connection framework. EachJS enhances HTML and bridges the front view with the back-end web API. It is free of charge to any person or business, licensed under MIT.
+EachJS is an open source API connection framework. EachJS enhances HTML and bridges the HTML view with the web API. It is free of charge to any person or business, licensed under MIT.
 
 EachJS extends HTML with new attributes. With EachJS, your HTML can communicate with your API services with no or minimum additional JavaScript codes. EachJS is perfect for SOA-driven applications and Single Page Applications (SPAs). 
 
@@ -589,6 +589,8 @@ This also allows you to define your own attribute names, such as:
 
 EachJS v1.0 was officially released on 1/29/2016. You are welcomed and encouraged to make contributions, including enhancing/debugging source codes, creating examples, writing unit testings, making videos, correcting mistakes, and providing suggestions.
 We'll evaluate your contribution every 3 months. Key contributors will be credited on this page. 
+
+Any quesitons or suggestions, please send to informationtechs@gmail.com.
 
 
 

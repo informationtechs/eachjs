@@ -1,0 +1,31 @@
+{
+  "name": "EachJS",
+  "version": "1.0",
+  "homepage": "https://github.com/informationtechs/eachjs",
+  "authors": [
+    "Joe Gao <informationtechs@gmail.com>"
+  ],
+  "description": "EachJS is an open source API connection framework. EachJS enhances HTML and bridges the HTML view with the web API. It is free of charge to any person or business, licensed under MIT.",
+  "main": "each-1.0.js",
+  "moduleType": [],
+  "keywords": [
+    "eachjs",
+    "API",
+    "connection",
+    "framework",
+    "services",
+    "SOA",
+    "connector"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7"
+  }
+}
