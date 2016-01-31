@@ -29,9 +29,18 @@ It returns a simple string:
 Sample: Dot
 ```
 
-In the following example, you can quickly call the data service and put the results on your page.
+In the following video, there is an example that shows you how to call the data service and put the results on the page.
+
+[![EachJS - A Quick Example](https://i.ytimg.com/vi/sLNrB6YAuiI/default.jpg)](https://www.youtube.com/watch?v=sLNrB6YAuiI&feature=youtu.be)
+(See Example 1-1 below for source codes)
+
+## Examples
+
+In this section, we'll use examples to help you quickly master EachJS. All examples can be downloaded at: https://github.com/informationtechs/eachjs
 
 ### Example 1-1:
+Populate DIV HTML (this is the example in the above video)
+(All attributes in EachJS start with a "data-ej-" prefix, and are customizable.)
 ```
 <html>
 <head>
@@ -43,17 +52,6 @@ In the following example, you can quickly call the data service and put the resu
 <script src="js/each-1.0.js" type="text/javascript"></script>
 </body>
 </html>
-```
-
-## Examples
-
-In this section, we'll use examples to help you quickly master EachJS. All examples can be downloaded at: https://github.com/informationtechs/eachjs
-
-### Example 1-1:
-Populate DIV HTML
-(All attributes in EachJS start with a "data-ej-" prefix, and are customizable.)
-```
-<div id="unit1" data-ej-load="http://eachdataapi.azurewebsites.net/data/dot"></div>
 ```
 
 ### Example 1-2:
