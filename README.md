@@ -4,6 +4,11 @@ EachJS is an open source API connection framework. EachJS enhances HTML and brid
 
 EachJS extends HTML with new attributes. With EachJS, your HTML can communicate with your API services with no or minimum additional JavaScript codes. EachJS is perfect for SOA-driven applications and Single Page Applications (SPAs). 
 
+Bower and Nuget packages are available:
+
+* Install with [Bower](http://bower.io): `bower install EachJS`.
+* Install with [Nuget](https://www.nuget.org/): `install-package EachJS`.
+
 ## Table of Contents
 
 * [Getting Started](#getting-started)
