@@ -31,11 +31,9 @@ It returns a simple string:
 Sample: Dot
 ```
 
-In the following video, there is an example that shows you how to call the data service and put the results on the page.
+The following video uses examples to give you a brief overview of how you can expedite your development with EachJS.
 
-[![EachJS - A Quick Example](https://i.ytimg.com/vi/sLNrB6YAuiI/default.jpg)](https://www.youtube.com/watch?v=sLNrB6YAuiI&feature=youtu.be)
-
-(See Example 1-1 below for source codes)
+[![EachJS - Introduction](https://i.ytimg.com/vi/YXlbZlY6eZI/1.jpg?time=1455160846942)](https://youtu.be/YXlbZlY6eZI)
 
 ## Examples
 
