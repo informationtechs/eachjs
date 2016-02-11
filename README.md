@@ -31,7 +31,7 @@ It returns a simple string:
 Sample: Dot
 ```
 
-The following video uses examples to give you a brief overview of how you can expedite your development with EachJS.
+The following 5-minute video uses examples to give you a brief overview of how you can expedite your development with EachJS.
 
 [![EachJS - Introduction](https://i.ytimg.com/vi/YXlbZlY6eZI/1.jpg?time=1455160846942)](https://youtu.be/YXlbZlY6eZI)
 
