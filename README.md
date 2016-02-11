@@ -2,7 +2,9 @@
 
 EachJS is an open source API connection framework. EachJS enhances HTML and bridges the HTML view with the web API. It is free of charge to any person or business, licensed under MIT.
 
-EachJS extends HTML with new attributes. With EachJS, your HTML can communicate with your API services with no or minimum additional JavaScript codes. EachJS is perfect for SOA-driven applications and Single Page Applications (SPAs). 
+EachJS extends HTML with new attributes. With EachJS, your HTML can communicate with your API services without additional JavaScript codes. EachJS is perfect for SOA-driven applications and Single Page Applications (SPAs). 
+
+EachJS was inspired by the Twitter Bootstrap & the Google AugularJS.
 
 Bower and Nuget packages are available:
 
