@@ -21,6 +21,14 @@ Bower and Nuget packages are available:
 
 ## Getting Started
 
+The following 5-minute video uses examples to give you a brief overview of how you can expedite your development with EachJS.
+
+[![EachJS - Introduction](https://i.ytimg.com/vi/YXlbZlY6eZI/1.jpg?time=1455160846942)](https://youtu.be/YXlbZlY6eZI)
+
+## Examples
+
+In this section, we'll use examples to help you quickly master EachJS. All examples can be downloaded at: https://github.com/informationtechs/eachjs
+
 Let's start with a quick example.
 
 Suppose there is a data service at:
@@ -30,14 +38,6 @@ It returns a simple string:
 ```
 Sample: Dot
 ```
-
-The following 5-minute video uses examples to give you a brief overview of how you can expedite your development with EachJS.
-
-[![EachJS - Introduction](https://i.ytimg.com/vi/YXlbZlY6eZI/1.jpg?time=1455160846942)](https://youtu.be/YXlbZlY6eZI)
-
-## Examples
-
-In this section, we'll use examples to help you quickly master EachJS. All examples can be downloaded at: https://github.com/informationtechs/eachjs
 
 ### Example 1-1:
 Populate DIV HTML 
