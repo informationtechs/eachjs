@@ -1,6 +1,6 @@
 # EachJS
 
-EachJS is an open source API connection framework written in JavaScript. EachJS enhances HTML and bridges the HTML view with the web API. It is free of charge to any person or business, licensed under MIT. The development of EachJS was inspired by the Twitter Bootstrap & the Google AugularJS.
+EachJS is an open source API connection framework written in JavaScript. EachJS enhances HTML and bridges HTML views with web APIs. It is free of charge to any person or business, licensed under MIT. The development of EachJS was inspired by the Twitter Bootstrap & the Google AugularJS.
 
 EachJS extends HTML with new attributes. With EachJS, your HTML can communicate with your API services without additional JavaScript codes. EachJS is perfect for Single Page Applications (SPAs) and SOA-driven applications. 
 
